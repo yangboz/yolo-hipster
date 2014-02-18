@@ -1,7 +1,7 @@
 yolo-hipster
 ============
 
-Neo4J for AS3.
+Neo4J with AS3 language drivers.
 
 Introduction
 ============
