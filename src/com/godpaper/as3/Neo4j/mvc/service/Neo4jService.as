@@ -1,43 +1,32 @@
 
-package
+package com.godpaper.as3.Neo4j.mvc.service
 {
+	import flash.events.IEventDispatcher;
+	
 	//--------------------------------------------------------------------------
 	//
 	// Imports
 	//
 	//--------------------------------------------------------------------------
-	import com.godpaper.as3.Neo4j.mvc.Neo4jConfig;
-	import com.godpaper.as3.Neo4j.mvc.view.MainView;
-	
-	import flash.display.Sprite;
-	import flash.display.StageAlign;
-	import flash.display.StageScaleMode;
-	import flash.events.Event;
-	
-	import robotlegs.bender.bundles.mvcs.MVCSBundle;
-	import robotlegs.bender.extensions.contextView.ContextView;
-	import robotlegs.bender.framework.api.IContext;
-	import robotlegs.bender.framework.impl.Context;
-	
 	
 	/**
-	 * Neo4jAS3.as class. 
+	 * Neo4jService.as class. 
 	 * @author yangboz
 	 * @langVersion 3.0
 	 * @playerVersion 11.2+
 	 * @airVersion 3.2+
-	 * Created Feb 18, 2014 10:58:20 AM
+	 * Created Feb 18, 2014 3:47:52 PM
 	 * @history 12/30/13,
 	 */ 
-	public class Neo4jAS3 extends Sprite
+	public class Neo4jService implements INeo4jService
 	{ 
 		//--------------------------------------------------------------------------
 		//
 		// Variables
 		//
 		//--------------------------------------------------------------------------
-		private var _mainView:MainView;
-		private var _context:IContext;
+		[Inject]
+		public var eventDispatcher:IEventDispatcher;
 		//----------------------------------
 		// CONSTANTS
 		//----------------------------------
@@ -61,16 +50,16 @@ package
 		// Constructor
 		//
 		//--------------------------------------------------------------------------
-		public function Neo4jAS3()
+		public function Neo4jService()
 		{
-			stage.align = StageAlign.TOP_LEFT;
-			stage.scaleMode = StageScaleMode.NO_SCALE;
-			//
-			this._context = new Context()
-				.install(MVCSBundle)
-				.configure(Neo4jConfig,new ContextView(this));
-			//
-			addEventListener(Event.ADDED_TO_STAGE, _onApplication_AddedToStageHandler);
+		}
+		
+		public function callRestAPI():void
+		{
+			//TODO:Neo4j Restful API call!
+			trace("Prompt to Neo4j Restful API!!!");
+			//dispatch event
+//			eventDispatcher.dispatchEvent(
 		} 
 		//--------------------------------------------------------------------------
 		//
@@ -89,14 +78,6 @@ package
 		// Private methods
 		//
 		//--------------------------------------------------------------------------
-		private function _onApplication_AddedToStageHandler(event:Event):void
-		{
-			removeEventListener(Event.ADDED_TO_STAGE, _onApplication_AddedToStageHandler);
-			
-			//
-			this._mainView = new MainView();
-			this.addChild(this._mainView);
-		}
 	}
 	
 }
