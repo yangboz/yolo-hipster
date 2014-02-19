@@ -6,6 +6,8 @@ package com.godpaper.as3.Neo4j.mvc.events
 	// Imports
 	//
 	//--------------------------------------------------------------------------
+	import com.godpaper.as3.Neo4j.mvc.utils.Neo4jConstants;
+	
 	import flash.events.Event;
 	
 	
@@ -25,33 +27,36 @@ package com.godpaper.as3.Neo4j.mvc.events
 		// Variables
 		//
 		//--------------------------------------------------------------------------
-		
+		private var _param:Neo4jConstants;
 		//----------------------------------
 		// CONSTANTS
 		//----------------------------------
-		public static const API_NODE:String = "db/node";
+		public static const API_CALL:String = "Neo4j_API_CALL";
 		//--------------------------------------------------------------------------
 		//
 		// Public properties
 		//
 		//--------------------------------------------------------------------------
-		
-		
+		public function get param():Neo4jConstants
+		{
+			return _param;
+		}
 		//--------------------------------------------------------------------------
 		//
 		// Protected properties
 		//
 		//--------------------------------------------------------------------------
 		
-		
 		//--------------------------------------------------------------------------
 		//
 		// Constructor
 		//
 		//--------------------------------------------------------------------------
-		public function Neo4jAppEvent(type:String, bubbles:Boolean=false, cancelable:Boolean=false)
+		public function Neo4jAppEvent(type:String, param:Neo4jConstants, bubbles:Boolean=false, cancelable:Boolean=false)
 		{
 			super(type, bubbles, cancelable);
+			//
+			this._param = param;
 		} 
 		//--------------------------------------------------------------------------
 		//
@@ -60,7 +65,7 @@ package com.godpaper.as3.Neo4j.mvc.events
 		//--------------------------------------------------------------------------
 		override public function clone():Event
 		{
-			return new Neo4jAppEvent(type, bubbles, cancelable);
+			return new Neo4jAppEvent(type, param, bubbles, cancelable);
 		}
 		//--------------------------------------------------------------------------
 		//

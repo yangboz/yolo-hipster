@@ -78,7 +78,7 @@ package com.godpaper.as3.Neo4j.mvc
 		//
 		public function configure():void
 		{
-			this.commandMap.map(Neo4jAppEvent.API_NODE,Neo4jAppEvent).toCommand(Neo4jCommand);
+			this.commandMap.map(Neo4jAppEvent.API_CALL,Neo4jAppEvent).toCommand(Neo4jCommand);
 			//
 			this.injector.map(INeo4jService).toSingleton(Neo4jService);
 			//

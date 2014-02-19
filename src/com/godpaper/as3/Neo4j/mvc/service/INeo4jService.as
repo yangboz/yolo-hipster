@@ -1,6 +1,8 @@
 
 package com.godpaper.as3.Neo4j.mvc.service
 {
+	import com.godpaper.as3.Neo4j.mvc.utils.Neo4jConstants;
+
 	//--------------------------------------------------------------------------
 	//
 	// Imports
@@ -37,6 +39,6 @@ package com.godpaper.as3.Neo4j.mvc.service
 		// Public methods
 		//
 		//--------------------------------------------------------------------------
-		function callRestAPI():void;
+		function callAPI(param:Neo4jConstants):void;
 	}
 }

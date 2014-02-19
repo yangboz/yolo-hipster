@@ -7,6 +7,7 @@ package com.godpaper.as3.Neo4j.mvc.view
 	//
 	//--------------------------------------------------------------------------
 	import com.godpaper.as3.Neo4j.mvc.events.Neo4jAppEvent;
+	import com.godpaper.as3.Neo4j.mvc.utils.Neo4jConstants;
 	
 	import flash.display.Sprite;
 	import flash.events.MouseEvent;
@@ -79,7 +80,7 @@ package com.godpaper.as3.Neo4j.mvc.view
 		//--------------------------------------------------------------------------
 		protected function textFieldClickHander(event:MouseEvent):void
 		{
-			this.dispatchEvent(new Neo4jAppEvent(Neo4jAppEvent.API_NODE));
+			this.dispatchEvent(new Neo4jAppEvent(Neo4jAppEvent.API_CALL,Neo4jConstants.NODES));
 		}
 		//--------------------------------------------------------------------------
 		//

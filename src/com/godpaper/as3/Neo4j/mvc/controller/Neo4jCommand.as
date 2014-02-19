@@ -6,6 +6,7 @@ package com.godpaper.as3.Neo4j.mvc.controller
 	// Imports
 	//
 	//--------------------------------------------------------------------------
+	import com.godpaper.as3.Neo4j.mvc.events.Neo4jAppEvent;
 	import com.godpaper.as3.Neo4j.mvc.service.INeo4jService;
 	
 	import robotlegs.bender.bundles.mvcs.Command;
@@ -29,6 +30,9 @@ package com.godpaper.as3.Neo4j.mvc.controller
 		//--------------------------------------------------------------------------
 		[Inject]
 		public var neo4jService:INeo4jService;
+		//
+		[Inject]
+		public var neo4jAppEvent:Neo4jAppEvent;
 		//----------------------------------
 		// CONSTANTS
 		//----------------------------------
@@ -63,7 +67,7 @@ package com.godpaper.as3.Neo4j.mvc.controller
 		//--------------------------------------------------------------------------
 		override public function execute():void
 		{
-			neo4jService.callRestAPI();
+			neo4jService.callAPI(neo4jAppEvent.param);
 		}
 		//--------------------------------------------------------------------------
 		//

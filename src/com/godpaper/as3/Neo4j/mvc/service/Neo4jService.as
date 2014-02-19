@@ -2,6 +2,7 @@
 package com.godpaper.as3.Neo4j.mvc.service
 {
 	import com.adobe.net.URI;
+	import com.godpaper.as3.Neo4j.mvc.utils.Neo4jConstants;
 	
 	import flash.events.ErrorEvent;
 	import flash.events.IEventDispatcher;
@@ -42,7 +43,7 @@ package com.godpaper.as3.Neo4j.mvc.service
 		//----------------------------------
 		// CONSTANTS
 		//----------------------------------
-		private static const NEO4J_URL:String = "http://localhost:7474/db/data/";
+		
 		//--------------------------------------------------------------------------
 		//
 		// Public properties
@@ -64,7 +65,11 @@ package com.godpaper.as3.Neo4j.mvc.service
 		//--------------------------------------------------------------------------
 		public function Neo4jService()
 		{
-			this.uri = new URI(NEO4J_URL);
+		}
+		
+		public function callAPI(param:Neo4jConstants):void
+		{
+			this.uri = new URI(param.URL);
 			this.client = new HttpClient(uri);
 			//
 			client.listener.onStatus = function(event:HttpStatusEvent):void {
@@ -91,11 +96,6 @@ package com.godpaper.as3.Neo4j.mvc.service
 				var errorMessage:String = event.text;
 				trace("httpclient onError:",event);
 			}; 
-		}
-		
-		public function callRestAPI():void
-		{
-			//TODO:Neo4j Restful API call!
 			trace("Prompt to Neo4j Restful API!!!");
 			this.client.get(this.uri);
 			//dispatch event
