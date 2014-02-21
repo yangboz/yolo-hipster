@@ -3,10 +3,13 @@ package com.godpaper.as3.Neo4j.mvc.service
 {
 	import com.adobe.net.URI;
 	import com.godpaper.as3.Neo4j.mvc.utils.Neo4jConstants;
+	import com.godpaper.as3.utils.LogUtil;
 	
 	import flash.events.ErrorEvent;
 	import flash.events.IEventDispatcher;
 	import flash.utils.ByteArray;
+	
+	import mx.logging.ILogger;
 	
 	import org.httpclient.HttpClient;
 	import org.httpclient.events.HttpDataEvent;
@@ -43,7 +46,7 @@ package com.godpaper.as3.Neo4j.mvc.service
 		//----------------------------------
 		// CONSTANTS
 		//----------------------------------
-		
+		private static const LOG:ILogger = LogUtil.getLogger(Neo4jService);
 		//--------------------------------------------------------------------------
 		//
 		// Public properties
@@ -74,7 +77,7 @@ package com.godpaper.as3.Neo4j.mvc.service
 			//
 			client.listener.onStatus = function(event:HttpStatusEvent):void {
 				// Notified of response (with headers but not content)
-				trace("httpclient onStatus:",event.code);
+				LOG.info("httpclient onStatus:{0}",event.code);
 			};
 			
 			client.listener.onData = function(event:HttpDataEvent):void {
@@ -84,19 +87,19 @@ package com.godpaper.as3.Neo4j.mvc.service
 				// For data
 				var data:ByteArray = event.bytes;    
 				//
-				trace("httpclient onData:",data.toString());
+				LOG.info("httpclient onData:{0}",data.toString());
 			};
 			
 			client.listener.onComplete = function(event:HttpResponseEvent):void {
 				// Notified when complete (after status and data)
-				trace("httpclient onComplete:",event.response);
+				LOG.info("httpclient onComplete:{0}",event.response);
 			};
 			
 			client.listener.onError = function(event:ErrorEvent):void {
 				var errorMessage:String = event.text;
-				trace("httpclient onError:",event);
+				LOG.info("httpclient onError:{0}",event);
 			}; 
-			trace("Prompt to Neo4j Restful API!!!");
+			LOG.debug("Prompt to Neo4j Restful API!!!");
 			this.client.get(this.uri);
 			//dispatch event
 //			eventDispatcher.dispatchEvent(
