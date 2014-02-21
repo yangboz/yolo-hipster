@@ -1,41 +1,37 @@
 
-package com.godpaper.as3.Neo4j.mvc.view
+package com.godpaper.as3.Neo4j.core
 {
 	//--------------------------------------------------------------------------
 	//
 	// Imports
 	//
 	//--------------------------------------------------------------------------
-	import com.godpaper.as3.Neo4j.mvc.events.Neo4jAppEvent;
-	import com.godpaper.as3.Neo4j.mvc.consts.Neo4jConstants;
-	
-	import flash.display.Sprite;
-	import flash.events.MouseEvent;
-	import flash.text.TextField;
-	import flash.text.TextFormat;
+	import com.godpaper.as3.utils.Enum;
 	
 	
 	/**
-	 * MainView.as class. 
+	 * Neo4jStatus.as class. 
 	 * @author yangboz
 	 * @langVersion 3.0
 	 * @playerVersion 11.2+
 	 * @airVersion 3.2+
-	 * Created Feb 18, 2014 4:42:14 PM
+	 * Created Feb 21, 2014 3:39:58 PM
 	 * @history 12/30/13,
 	 */ 
-	public class MainView extends Sprite
+	public final class Neo4jStatus extends Enum
 	{ 
 		//--------------------------------------------------------------------------
 		//
 		// Variables
 		//
 		//--------------------------------------------------------------------------
-		private var _textField:TextField;
+		
 		//----------------------------------
 		// CONSTANTS
 		//----------------------------------
-		
+		public var CODE:Number;
+		public var DESCRIPTION:String;
+		public var CLASSIFICATION:String;
 		//--------------------------------------------------------------------------
 		//
 		// Public properties
@@ -55,18 +51,14 @@ package com.godpaper.as3.Neo4j.mvc.view
 		// Constructor
 		//
 		//--------------------------------------------------------------------------
-		public function MainView()
+		public function Neo4jStatus(code:Number,description:String=null,classification:String=null)
 		{
 			super();
 			//
-			this._textField = new TextField();
-			this._textField.text = "Neo4j_API_CALL";
-			this._textField.selectable = false;
-			this._textField.setTextFormat(new TextFormat(null,24,0xffeeff,true,true,true,null));
-			this._textField.addEventListener(MouseEvent.CLICK,textFieldClickHander);
-			this.addChild(this._textField);
+			this.CODE = code;
+			this.DESCRIPTION = description;
+			this.CLASSIFICATION = classification;
 		} 
-		
 		//--------------------------------------------------------------------------
 		//
 		// Public methods
@@ -78,10 +70,7 @@ package com.godpaper.as3.Neo4j.mvc.view
 		// Protected methods
 		//
 		//--------------------------------------------------------------------------
-		protected function textFieldClickHander(event:MouseEvent):void
-		{
-			this.dispatchEvent(new Neo4jAppEvent(Neo4jAppEvent.API_CALL,Neo4jConstants.NODES));
-		}
+		
 		//--------------------------------------------------------------------------
 		//
 		// Private methods

@@ -8,11 +8,11 @@ package net.nobien.jameson.mapping {
         }
         
         public function parse(json:String):* {
-            return JSON.decode(json);
+            return com.adobe.serialization.json.JSON.decode(json);
         }
         
         public function stringify(obj:*):String {
-            return JSON.encode(obj);
+            return com.adobe.serialization.json.JSON.encode(obj);
         }
         
     }

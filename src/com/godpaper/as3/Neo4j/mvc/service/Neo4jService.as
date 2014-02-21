@@ -2,7 +2,7 @@
 package com.godpaper.as3.Neo4j.mvc.service
 {
 	import com.adobe.net.URI;
-	import com.godpaper.as3.Neo4j.mvc.utils.Neo4jConstants;
+	import com.godpaper.as3.Neo4j.mvc.consts.Neo4jConstants;
 	import com.godpaper.as3.utils.LogUtil;
 	
 	import flash.events.ErrorEvent;

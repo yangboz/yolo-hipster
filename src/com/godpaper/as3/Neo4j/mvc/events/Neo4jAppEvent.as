@@ -6,7 +6,7 @@ package com.godpaper.as3.Neo4j.mvc.events
 	// Imports
 	//
 	//--------------------------------------------------------------------------
-	import com.godpaper.as3.Neo4j.mvc.utils.Neo4jConstants;
+	import com.godpaper.as3.Neo4j.mvc.consts.Neo4jConstants;
 	
 	import flash.events.Event;
 	

@@ -1,8 +1,6 @@
 
-package com.godpaper.as3.Neo4j.mvc.service
+package com.godpaper.as3.Neo4j.core
 {
-	import com.godpaper.as3.Neo4j.mvc.consts.Neo4jConstants;
-
 	//--------------------------------------------------------------------------
 	//
 	// Imports
@@ -10,15 +8,15 @@ package com.godpaper.as3.Neo4j.mvc.service
 	//--------------------------------------------------------------------------
 	
 	/**
-	 * INeo4jService.as class. 
+	 * INeo4jAPIs.as class. 
 	 * @author yangboz
 	 * @langVersion 3.0
 	 * @playerVersion 11.2+
 	 * @airVersion 3.2+
-	 * Created Feb 18, 2014 3:45:15 PM
+	 * Created Feb 21, 2014 3:22:25 PM
 	 * @history 12/30/13,
 	 */
-	public interface INeo4jService
+	public interface INeo4jAPIs
 	{
 		//--------------------------------------------------------------------------
 		//
@@ -39,6 +37,5 @@ package com.godpaper.as3.Neo4j.mvc.service
 		// Public methods
 		//
 		//--------------------------------------------------------------------------
-		function callAPI(param:Neo4jConstants):void;
 	}
 }

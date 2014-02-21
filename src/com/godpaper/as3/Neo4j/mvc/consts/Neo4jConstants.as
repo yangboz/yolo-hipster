@@ -1,41 +1,57 @@
 
-package com.godpaper.as3.Neo4j.mvc.view
+package com.godpaper.as3.Neo4j.mvc.consts
 {
 	//--------------------------------------------------------------------------
 	//
 	// Imports
 	//
 	//--------------------------------------------------------------------------
-	import com.godpaper.as3.Neo4j.mvc.events.Neo4jAppEvent;
-	import com.godpaper.as3.Neo4j.mvc.consts.Neo4jConstants;
-	
-	import flash.display.Sprite;
-	import flash.events.MouseEvent;
-	import flash.text.TextField;
-	import flash.text.TextFormat;
+	import com.godpaper.as3.utils.Enum;
 	
 	
 	/**
-	 * MainView.as class. 
+	 * Neo4jConstants.as class. 
 	 * @author yangboz
 	 * @langVersion 3.0
 	 * @playerVersion 11.2+
 	 * @airVersion 3.2+
-	 * Created Feb 18, 2014 4:42:14 PM
+	 * Created Feb 19, 2014 5:32:31 PM
 	 * @history 12/30/13,
 	 */ 
-	public class MainView extends Sprite
+	final public class Neo4jConstants extends Enum
 	{ 
 		//--------------------------------------------------------------------------
 		//
 		// Variables
 		//
 		//--------------------------------------------------------------------------
-		private var _textField:TextField;
+//		//CRUD operation.
+//		public var GET:String;
+//		public var POST:String;
+//		public var PUT:String;
+//		public var DELETE:String;
+		public var URL:String;
+		public var QUERY:String;
+		public var PARAMS:Object;
 		//----------------------------------
 		// CONSTANTS
 		//----------------------------------
-		
+		private static const NEO4J_URI:String = "http://localhost:7474/";
+		//Neo4j RESTful API resource list
+//		public static const STATUS_CODE:String = NEO4J_URI.concat("");
+//		public static const SERVICE_ROOT:String = NEO4J_URI.concat("");
+//		public static const PROPERTY_VALUES:String = NEO4J_URI.concat("");
+//		public static const NODES:String = NEO4J_URI.concat("");
+		public static const NODES:Neo4jConstants = new Neo4jConstants(NEO4J_URI.concat("db/data/node"));
+//		public static const RELATIONSHIPS:String = NEO4J_URI.concat("");
+//		public static const RELATIONSHIP_TYPES:String = NEO4J_URI.concat("");
+//		public static const NODE_PROPERTIES:String = NEO4J_URI.concat("");
+//		public static const RELATIONSHIP_PROPERTIES:String = NEO4J_URI.concat("");
+//		public static const INDEXING:String = NEO4J_URI.concat("");
+//		public static const CONSTRAINTS:String = NEO4J_URI.concat("");
+//		public static const TRAVERSALS:String = NEO4J_URI.concat("");
+//		public static const GRAPH_ALGORITHMS:String = NEO4J_URI.concat("");
+//		public static const BATCH_OPERATIONS:String = NEO4J_URI.concat("");
 		//--------------------------------------------------------------------------
 		//
 		// Public properties
@@ -55,18 +71,14 @@ package com.godpaper.as3.Neo4j.mvc.view
 		// Constructor
 		//
 		//--------------------------------------------------------------------------
-		public function MainView()
+		public function Neo4jConstants(url:String,query:String="",params:Object=null)
 		{
 			super();
 			//
-			this._textField = new TextField();
-			this._textField.text = "Neo4j_API_CALL";
-			this._textField.selectable = false;
-			this._textField.setTextFormat(new TextFormat(null,24,0xffeeff,true,true,true,null));
-			this._textField.addEventListener(MouseEvent.CLICK,textFieldClickHander);
-			this.addChild(this._textField);
+			this.URL = url;
+			this.QUERY = query;
+			this.PARAMS = params;
 		} 
-		
 		//--------------------------------------------------------------------------
 		//
 		// Public methods
@@ -78,10 +90,7 @@ package com.godpaper.as3.Neo4j.mvc.view
 		// Protected methods
 		//
 		//--------------------------------------------------------------------------
-		protected function textFieldClickHander(event:MouseEvent):void
-		{
-			this.dispatchEvent(new Neo4jAppEvent(Neo4jAppEvent.API_CALL,Neo4jConstants.NODES));
-		}
+		
 		//--------------------------------------------------------------------------
 		//
 		// Private methods

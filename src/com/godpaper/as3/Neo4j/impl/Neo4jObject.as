@@ -1,37 +1,31 @@
 
-package com.godpaper.as3.Neo4j.mvc.view
+package com.godpaper.as3.Neo4j.impl
 {
 	//--------------------------------------------------------------------------
 	//
 	// Imports
 	//
 	//--------------------------------------------------------------------------
-	import com.godpaper.as3.Neo4j.mvc.events.Neo4jAppEvent;
-	import com.godpaper.as3.Neo4j.mvc.consts.Neo4jConstants;
-	
-	import flash.display.Sprite;
-	import flash.events.MouseEvent;
-	import flash.text.TextField;
-	import flash.text.TextFormat;
+	import com.godpaper.as3.Neo4j.core.INeo4jObject;
 	
 	
 	/**
-	 * MainView.as class. 
+	 * Neo4jObject.as class. 
 	 * @author yangboz
 	 * @langVersion 3.0
 	 * @playerVersion 11.2+
 	 * @airVersion 3.2+
-	 * Created Feb 18, 2014 4:42:14 PM
+	 * Created Feb 21, 2014 3:25:46 PM
 	 * @history 12/30/13,
 	 */ 
-	public class MainView extends Sprite
+	public class Neo4jObject implements INeo4jObject
 	{ 
 		//--------------------------------------------------------------------------
 		//
 		// Variables
 		//
 		//--------------------------------------------------------------------------
-		private var _textField:TextField;
+		
 		//----------------------------------
 		// CONSTANTS
 		//----------------------------------
@@ -55,18 +49,28 @@ package com.godpaper.as3.Neo4j.mvc.view
 		// Constructor
 		//
 		//--------------------------------------------------------------------------
-		public function MainView()
+		public function Neo4jObject()
 		{
-			super();
-			//
-			this._textField = new TextField();
-			this._textField.text = "Neo4j_API_CALL";
-			this._textField.selectable = false;
-			this._textField.setTextFormat(new TextFormat(null,24,0xffeeff,true,true,true,null));
-			this._textField.addEventListener(MouseEvent.CLICK,textFieldClickHander);
-			this.addChild(this._textField);
-		} 
+			//TODO: implement function
+		}
 		
+		public function toString():String
+		{
+			//TODO: implement function
+			return null;
+		}
+		
+		public function toJsonObject():INeo4jObject
+		{
+			//TODO: implement function
+			return null;
+		}
+		
+		public function toJsonString():String
+		{
+			//TODO: implement function
+			return null;
+		} 
 		//--------------------------------------------------------------------------
 		//
 		// Public methods
@@ -78,10 +82,7 @@ package com.godpaper.as3.Neo4j.mvc.view
 		// Protected methods
 		//
 		//--------------------------------------------------------------------------
-		protected function textFieldClickHander(event:MouseEvent):void
-		{
-			this.dispatchEvent(new Neo4jAppEvent(Neo4jAppEvent.API_CALL,Neo4jConstants.NODES));
-		}
+		
 		//--------------------------------------------------------------------------
 		//
 		// Private methods
