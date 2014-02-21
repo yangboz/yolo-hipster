@@ -13,7 +13,7 @@ package mx.collections
 {
     
 import flash.events.IEventDispatcher;
-import mx.events.CollectionEvent;
+//import mx.events.CollectionEvent;
 
 /**
  *  Dispatched when the IList has been updated in some way.

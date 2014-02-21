@@ -72,7 +72,10 @@ package com.godpaper.as3.Neo4j.mvc.service
 		public function Neo4jService()
 		{
 		}
-		
+		/**
+		 * This function handle the RESTful APIs call subroutines.
+		 * @param param Neo4jConstants
+		 */		
 		public function callAPI(param:Neo4jConstants):void
 		{
 			this.uri = new URI(param.URL);

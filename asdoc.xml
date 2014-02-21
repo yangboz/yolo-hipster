@@ -39,6 +39,7 @@
 			
 			<define name="CONFIG::DEV" value="false"/>
 			
+			<exclude-sources path-element="src/mx/core/Version.as" />
 			<!--
 			<exclude-sources path-element="src/mx/core/Version.as" />
 			<exclude-sources path-element="src/FlexUnitApplication.as" />
