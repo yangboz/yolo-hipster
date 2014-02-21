@@ -100,7 +100,24 @@ package com.godpaper.as3.Neo4j.mvc.service
 				LOG.info("httpclient onError:{0}",event);
 			}; 
 			LOG.debug("Prompt to Neo4j Restful API!!!");
-			this.client.get(this.uri);
+			//RESTful handler here.
+			switch(param.RESTFUL)
+			{
+				case Neo4jConstants.GET:
+					this.client.get(this.uri);
+					break;
+				case Neo4jConstants.POST:
+					this.client.post(this.uri,param.PARAMS,param.CONTENT_TYPE);
+					break;
+				case Neo4jConstants.PUT:
+					this.client.put(this.uri,param.CONTENT_TYPE);
+					break;
+				case Neo4jConstants.DELETE:
+					this.client.del(this.uri);
+					break;
+				default:
+					break;
+			}
 			//dispatch event
 //			eventDispatcher.dispatchEvent(
 			
