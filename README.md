@@ -3,10 +3,11 @@ yolo-hipster
 
 Neo4J with AS3 language drivers.
 
+
 Introduction
 ============
 
-Neo4j is a graph database,a NOSQL datastore that use nodes and relationship between nodes to effectively and accurately model a domain.
+Neo4j is a  <a href="http://www.neo4j.org/learn/graphdatabase">graph database</a>, a NOSQL datastore that use nodes and relationship between nodes to effectively and accurately model a domain.
 
 The goal of Neo4jAS3 is to provider you with access to all the functionality of the Neo4j REST API via AS3.
 
