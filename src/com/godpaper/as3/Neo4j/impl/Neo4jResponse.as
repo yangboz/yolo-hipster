@@ -1,37 +1,43 @@
 
-package com.godpaper.as3.Neo4j.mvc.view
+package com.godpaper.as3.Neo4j.impl
 {
 	//--------------------------------------------------------------------------
 	//
 	// Imports
 	//
 	//--------------------------------------------------------------------------
-	import com.godpaper.as3.Neo4j.mvc.consts.Neo4jConstants;
-	import com.godpaper.as3.Neo4j.mvc.events.Neo4jAppEvent;
-	
-	import flash.display.Sprite;
-	import flash.events.MouseEvent;
-	import flash.text.TextField;
-	import flash.text.TextFormat;
-	
 	
 	/**
-	 * MainView.as class. 
+	 * Neo4jResponse.as class. 
 	 * @author yangboz
 	 * @langVersion 3.0
 	 * @playerVersion 11.2+
 	 * @airVersion 3.2+
-	 * Created Feb 18, 2014 4:42:14 PM
+	 * Created Feb 21, 2014 6:26:29 PM
 	 * @history 12/30/13,
 	 */ 
-	public class MainView extends Sprite
+	public class Neo4jResponse extends Neo4jObject
 	{ 
 		//--------------------------------------------------------------------------
 		//
 		// Variables
 		//
 		//--------------------------------------------------------------------------
-		private var _textField:TextField;
+		public var extensions:Object;
+		public var outgoing_relationships:String;
+		public var labels:String;
+		public var traverse:String;
+		public var all_typed_relationships:String;
+		public var self:String;
+		public var property:String;
+		public var outgoing_typed_relationships:String;
+		public var properties:String;
+		public var incoming_relationships:String;
+		public var create_relationship:String;
+		public var paged_traverse:String;
+		public var all_relationships:String;
+		public var incoming_typed_relationships:String;
+		public var data:Object;
 		//----------------------------------
 		// CONSTANTS
 		//----------------------------------
@@ -55,19 +61,10 @@ package com.godpaper.as3.Neo4j.mvc.view
 		// Constructor
 		//
 		//--------------------------------------------------------------------------
-		public function MainView()
+		public function Neo4jResponse()
 		{
 			super();
-			//
-			this._textField = new TextField();
-			this._textField.text = "Neo4j_API_CALL";
-			this._textField.selectable = false;
-			this._textField.width = 200;
-			this._textField.setTextFormat(new TextFormat(null,24,0x0000ff,true,true,true,null));
-			this._textField.addEventListener(MouseEvent.CLICK,textFieldClickHander);
-			this.addChild(this._textField);
 		} 
-		
 		//--------------------------------------------------------------------------
 		//
 		// Public methods
@@ -79,14 +76,7 @@ package com.godpaper.as3.Neo4j.mvc.view
 		// Protected methods
 		//
 		//--------------------------------------------------------------------------
-		protected function textFieldClickHander(event:MouseEvent):void
-		{
-//			var NODES_get:Neo4jConstants = new Neo4jConstants(Neo4jConstants.NEO4J_URI.concat("db/data/node"),Neo4jConstants.GET);
-//			this.dispatchEvent(new Neo4jAppEvent(Neo4jAppEvent.API_CALL,NODES_get));
-			var dummyObj:Object = {"foo":"bar"};
-			var NODES_post:Neo4jConstants = new Neo4jConstants(Neo4jConstants.NEO4J_URI.concat("db/data/node"),Neo4jConstants.POST,"",dummyObj);
-			this.dispatchEvent(new Neo4jAppEvent(Neo4jAppEvent.API_CALL,NODES_post));
-		}
+		
 		//--------------------------------------------------------------------------
 		//
 		// Private methods

@@ -14,11 +14,6 @@ package com.godpaper.as3.Neo4j.mvc
 	import com.godpaper.as3.Neo4j.mvc.view.MainView;
 	import com.godpaper.as3.Neo4j.mvc.view.MainViewMediator;
 	
-	import net.nobien.jameson.mapping.AdobeCoreLibJsonConverter;
-	import net.nobien.jameson.mapping.IJsonConverter;
-	import net.nobien.jameson.mapping.IObjectMapper;
-	import net.nobien.jameson.mapping.ObjectMapper;
-	
 	import robotlegs.bender.extensions.eventCommandMap.api.IEventCommandMap;
 	import robotlegs.bender.extensions.mediatorMap.api.IMediatorMap;
 	import robotlegs.bender.framework.api.IConfig;
@@ -49,8 +44,6 @@ package com.godpaper.as3.Neo4j.mvc
 		
 		[Inject]
 		public var commandMap:IEventCommandMap;
-		//Object mapper
-		private var objectMapper:IObjectMapper;
 		//----------------------------------
 		// CONSTANTS
 		//----------------------------------
@@ -76,7 +69,7 @@ package com.godpaper.as3.Neo4j.mvc
 		//--------------------------------------------------------------------------
 		public function Neo4jConfig()
 		{
-			this.objectMapper = new ObjectMapper(new AdobeCoreLibJsonConverter());
+			//
 		}
 		//--------------------------------------------------------------------------
 		//

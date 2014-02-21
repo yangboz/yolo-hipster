@@ -35,7 +35,7 @@ package com.godpaper.as3.Neo4j.mvc.consts
 		//----------------------------------
 		// CONSTANTS
 		//----------------------------------
-		private static const NEO4J_URI:String = "http://localhost:7474/";
+		public static const NEO4J_URI:String = "http://localhost:7474/";
 		//Neo4j RESTful API resource list
 //		public static const STATUS_CODE:String = NEO4J_URI.concat("");
 //		public static const SERVICE_ROOT:String = NEO4J_URI.concat("");

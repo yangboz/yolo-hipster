@@ -8,6 +8,7 @@ package com.godpaper.as3.Neo4j.impl
 	//--------------------------------------------------------------------------
 	import com.godpaper.as3.Neo4j.core.INeo4jObject;
 	
+	import mx.utils.ObjectUtil;
 	
 	/**
 	 * Neo4jObject.as class. 
@@ -56,8 +57,7 @@ package com.godpaper.as3.Neo4j.impl
 		
 		public function toString():String
 		{
-			//TODO: implement function
-			return null;
+			return ObjectUtil.toString(this);
 		}
 		
 		public function toJsonObject():INeo4jObject

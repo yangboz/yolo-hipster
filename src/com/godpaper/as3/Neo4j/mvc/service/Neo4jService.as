@@ -2,7 +2,10 @@
 package com.godpaper.as3.Neo4j.mvc.service
 {
 	import com.adobe.net.URI;
+	import com.godpaper.as3.Neo4j.impl.Neo4jResponse;
+	import com.godpaper.as3.Neo4j.mixin.Neo4jResponseMixin;
 	import com.godpaper.as3.Neo4j.mvc.consts.Neo4jConstants;
+	import com.godpaper.as3.Neo4j.mvc.utils.Neo4jUtil;
 	import com.godpaper.as3.utils.LogUtil;
 	
 	import flash.events.ErrorEvent;
@@ -88,6 +91,10 @@ package com.godpaper.as3.Neo4j.mvc.service
 				var data:ByteArray = event.bytes;    
 				//
 				LOG.info("httpclient onData:{0}",data.toString());
+				//JSON object mapper testing here.
+				Neo4jUtil.objectMapper.registerMixin(Neo4jResponse,Neo4jResponseMixin);
+				var response:Neo4jResponse = Neo4jUtil.objectMapper.readObject(Neo4jResponse,data.toString()) as Neo4jResponse;
+				LOG.info("httpclient onData->response:{0}",response.toString());
 			};
 			
 			client.listener.onComplete = function(event:HttpResponseEvent):void {
@@ -107,6 +114,9 @@ package com.godpaper.as3.Neo4j.mvc.service
 					this.client.get(this.uri);
 					break;
 				case Neo4jConstants.POST:
+					if(null == param.PARAMS){
+						throw new Error("Cannot POSTing without parameters to Neo4j REST API.");
+					}
 					this.client.post(this.uri,param.PARAMS,param.CONTENT_TYPE);
 					break;
 				case Neo4jConstants.PUT:
