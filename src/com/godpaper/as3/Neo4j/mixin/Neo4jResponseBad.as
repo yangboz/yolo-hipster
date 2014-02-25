@@ -1,8 +1,6 @@
 
-package com.godpaper.as3.Neo4j.impl
+package com.godpaper.as3.Neo4j.mixin
 {
-	import com.godpaper.as3.Neo4j.core.INeo4jObject;
-
 	//--------------------------------------------------------------------------
 	//
 	// Imports
@@ -10,26 +8,34 @@ package com.godpaper.as3.Neo4j.impl
 	//--------------------------------------------------------------------------
 	
 	/**
-	 * Neo4jCypher.as class. -This language is purpose build for working with graph data.</br>
-	 * Features:</br>
-	 * uses patterns to describe graph data;</br>
-	 * familiar SQL-like clause;</br>
-	 * declarative,describing what to find,not how to find it;</br>
+	 * Neo4jResponse404.as class. -Create a mixin to tell Jameson which fields in the JSON document map to the ActionScript object's fields. 
+	 * </br>HTTP:GET /db/data/node/xxxxx 404/409/ Not Found,Get non-existent node/property something else bad status response.
+	 * @see https://github.com/mattupstate/jameson
 	 * @author yangboz
 	 * @langVersion 3.0
 	 * @playerVersion 11.2+
 	 * @airVersion 3.2+
-	 * Created Feb 25, 2014 9:25:09 AM
+	 * Created Feb 21, 2014 6:42:12 PM
 	 * @history 12/30/13,
 	 */ 
-	public class Neo4jCypher extends Neo4jObject
+	public class Neo4jResponseBad
 	{ 
 		//--------------------------------------------------------------------------
 		//
 		// Variables
 		//
 		//--------------------------------------------------------------------------
-		
+		[JsonProperty("message")]
+		public var message:String;
+		//
+		[JsonProperty("exception")]
+		public var exception:String;
+		//
+		[JsonProperty("fullname")]
+		public var fullname:String;
+		//
+		[JsonProperty("stacktrace")]
+		public var stacktrace:Array;
 		//----------------------------------
 		// CONSTANTS
 		//----------------------------------
@@ -53,26 +59,15 @@ package com.godpaper.as3.Neo4j.impl
 		// Constructor
 		//
 		//--------------------------------------------------------------------------
-		public function Neo4jCypher()
+		public function Neo4jResponseBad()
 		{
-			super();
 		} 
 		//--------------------------------------------------------------------------
 		//
 		// Public methods
 		//
 		//--------------------------------------------------------------------------
-		/**
-		 * @param clause String for example:CREATE (ee:Person { name: "Emil", from: "Sweden", klout: 99 })
-		 * @param parameter Object for example: { "startName" : "I", "name" : "you" }
-		 * @return INeo4jObject
-		 * 
-		 */		
-		public function query(clause:String,parameter:Object):INeo4jObject
-		{
-			//TODO: implement function
-			return new Neo4jObject();
-		}
+		
 		//--------------------------------------------------------------------------
 		//
 		// Protected methods

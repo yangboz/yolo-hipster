@@ -8,7 +8,8 @@ package com.godpaper.as3.Neo4j.impl
 	//--------------------------------------------------------------------------
 	
 	/**
-	 * Neo4jProperty.as class. -named data values,can be strings,numbers, or booleans.
+	 * Neo4jProperty.as class. -named data values,can be strings,numbers, or booleans,arrays of the basic types above.
+	 * @see http://docs.neo4j.org/chunked/2.0.1/rest-api-property-values.html
 	 * @author yangboz
 	 * @langVersion 3.0
 	 * @playerVersion 11.2+

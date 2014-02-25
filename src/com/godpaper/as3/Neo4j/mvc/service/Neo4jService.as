@@ -3,7 +3,7 @@ package com.godpaper.as3.Neo4j.mvc.service
 {
 	import com.adobe.net.URI;
 	import com.godpaper.as3.Neo4j.impl.Neo4jResponse;
-	import com.godpaper.as3.Neo4j.mixin.Neo4jResponseMixin;
+	import com.godpaper.as3.Neo4j.mixin.Neo4jResponseNode;
 	import com.godpaper.as3.Neo4j.mvc.consts.Neo4jConstants;
 	import com.godpaper.as3.Neo4j.mvc.utils.Neo4jUtil;
 	import com.godpaper.as3.utils.LogUtil;
@@ -95,7 +95,7 @@ package com.godpaper.as3.Neo4j.mvc.service
 				//
 				LOG.info("httpclient onData:{0}",data.toString());
 				//JSON object mapper testing here.
-				Neo4jUtil.objectMapper.registerMixin(Neo4jResponse,Neo4jResponseMixin);
+				Neo4jUtil.objectMapper.registerMixin(Neo4jResponse,Neo4jResponseNode);
 				var response:Neo4jResponse = Neo4jUtil.objectMapper.readObject(Neo4jResponse,data.toString()) as Neo4jResponse;
 				LOG.info("httpclient onData->response:{0}",response.toString());
 			};

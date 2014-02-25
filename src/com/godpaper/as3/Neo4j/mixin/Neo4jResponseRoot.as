@@ -8,7 +8,8 @@ package com.godpaper.as3.Neo4j.mixin
 	//--------------------------------------------------------------------------
 	
 	/**
-	 * Neo4jResponseMixin.as class. -Create a mixin to tell Jameson which fields in the JSON document map to the ActionScript object's fields. 
+	 * Neo4jResponseRoot.as class. -Create a mixin to tell Jameson which fields in the JSON document map to the ActionScript object's fields.
+	 * </br>HTTP:GET /db/data 
 	 * @see https://github.com/mattupstate/jameson
 	 * @author yangboz
 	 * @langVersion 3.0
@@ -17,7 +18,7 @@ package com.godpaper.as3.Neo4j.mixin
 	 * Created Feb 21, 2014 6:42:12 PM
 	 * @history 12/30/13,
 	 */ 
-	public class Neo4jResponseMixin
+	public class Neo4jResponseRoot
 	{ 
 		//--------------------------------------------------------------------------
 		//
@@ -27,47 +28,42 @@ package com.godpaper.as3.Neo4j.mixin
 		[JsonProperty("extensions")]
 		public var extensions:Object;
 		//
-		[JsonProperty("outgoing_relationships")]
-		public var outgoing_relationships:String;
+		[JsonProperty("node")]
+		public var node:String;
 		//
-		[JsonProperty("labels")]
-		public var labels:String;
+		[JsonProperty("node_index")]
+		public var node_index:String;
 		//
-		[JsonProperty("traverse")]
-		public var traverse:String;
+		[JsonProperty("relationship_index")]
+		public var relationship_index:String;
 		//
-		[JsonProperty("all_typed_relationships")]
-		public var all_typed_relationships:String;
+		[JsonProperty("extensions_info")]
+		public var extensions_info:String;
 		//
-		[JsonProperty("self")]
-		public var self:String;
+		[JsonProperty("relationship_types")]
+		public var relationship_types:String;
 		//
-		[JsonProperty("property")]
-		public var property:String;
+		[JsonProperty("batch")]
+		public var batch:String;
 		//
-		[JsonProperty("outgoing_typed_relationships")]
-		public var outgoing_typed_relationships:String;
+		[JsonProperty("cypher")]
+		public var cypher:String;
 		//
-		[JsonProperty("properties")]
-		public var properties:String;
+		[JsonProperty("indexes")]
+		public var indexes:String;
 		//
-		[JsonProperty("incoming_relationships")]
-		public var incoming_relationships:String;
+		[JsonProperty("constraints")]
+		public var constraints:String;
 		//
-		[JsonProperty("create_relationship")]
-		public var create_relationship:String;
+		[JsonProperty("transaction")]
+		public var transaction:String;
 		//
-		[JsonProperty("paged_traverse")]
-		public var paged_traverse:String;
+		[JsonProperty("node_labels")]
+		public var node_labels:String;
 		//
-		[JsonProperty("all_relationships")]
-		public var all_relationships:String;
+		[JsonProperty("neo4j_version")]
+		public var neo4j_version:String;
 		//
-		[JsonProperty("incoming_typed_relationships")]
-		public var incoming_typed_relationships:String;
-		//
-		[JsonProperty("data")]
-		public var data:Object;
 		//----------------------------------
 		// CONSTANTS
 		//----------------------------------
@@ -91,7 +87,7 @@ package com.godpaper.as3.Neo4j.mixin
 		// Constructor
 		//
 		//--------------------------------------------------------------------------
-		public function Neo4jResponseMixin()
+		public function Neo4jResponseRoot()
 		{
 		} 
 		//--------------------------------------------------------------------------
