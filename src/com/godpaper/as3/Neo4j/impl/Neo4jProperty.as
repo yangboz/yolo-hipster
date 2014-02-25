@@ -8,7 +8,7 @@ package com.godpaper.as3.Neo4j.impl
 	//--------------------------------------------------------------------------
 	
 	/**
-	 * Neo4jProperty.as class. 
+	 * Neo4jProperty.as class. -named data values,can be strings,numbers, or booleans.
 	 * @author yangboz
 	 * @langVersion 3.0
 	 * @playerVersion 11.2+

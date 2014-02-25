@@ -8,7 +8,7 @@ package com.godpaper.as3.Neo4j.impl
 	//--------------------------------------------------------------------------
 	
 	/**
-	 * Neo4jLabel.as class. 
+	 * Neo4jLabel.as class. -a node can have zero or more labels,label do not have any properties.
 	 * @author yangboz
 	 * @langVersion 3.0
 	 * @playerVersion 11.2+

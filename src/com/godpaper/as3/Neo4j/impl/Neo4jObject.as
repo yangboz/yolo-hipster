@@ -6,12 +6,14 @@ package com.godpaper.as3.Neo4j.impl
 	// Imports
 	//
 	//--------------------------------------------------------------------------
+	import com.adobe.serialization.json.JSONDecoder;
+	import com.adobe.serialization.json.JSONEncoder;
 	import com.godpaper.as3.Neo4j.core.INeo4jObject;
 	
 	import mx.utils.ObjectUtil;
 	
 	/**
-	 * Neo4jObject.as class. 
+	 * Neo4jObject.as class. -abstracted prototype for Neo4j.
 	 * @author yangboz
 	 * @langVersion 3.0
 	 * @playerVersion 11.2+
@@ -54,22 +56,34 @@ package com.godpaper.as3.Neo4j.impl
 		{
 			//TODO: implement function
 		}
-		
+		/**
+		 * 
+		 * @return AS3 String
+		 * 
+		 */		
 		public function toString():String
 		{
 			return ObjectUtil.toString(this);
 		}
-		
+		/**
+		 * 
+		 * @return JSON Object
+		 * 
+		 */		
 		public function toJsonObject():INeo4jObject
 		{
-			//TODO: implement function
-			return null;
+			var coder:JSONDecoder = new JSONDecoder(this.toString(),false);
+			return coder.getValue();
 		}
-		
+		/**
+		 * 
+		 * @return JSON String
+		 * 
+		 */		
 		public function toJsonString():String
 		{
-			//TODO: implement function
-			return null;
+			var coder:JSONEncoder = new JSONEncoder(this.toString());
+			return coder.getString();
 		} 
 		//--------------------------------------------------------------------------
 		//

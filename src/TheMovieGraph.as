@@ -21,15 +21,21 @@ package
 	
 	
 	/**
-	 * Neo4jAS3.as class. -It is a APIs(Node/Property/Label/Relationship...) CRUD operation testing stub.
+	 * TheMovieGraph.as class. -It is a mini graph application containing actors and directors 
+	 * that are related through the movies they have collaborated on.</br>
+	 * The guild will show you how to:</br>
+	 * 1.Create:insert movie data into the graph;</br>
+	 * 2.Find:retrieve individual movies and actors;</br>
+	 * 3.Query:dicover related actors and directors;</br>
+	 * 4.Solve:the Bacon path;</br>
 	 * @author yangboz
 	 * @langVersion 3.0
 	 * @playerVersion 11.2+
 	 * @airVersion 3.2+
-	 * Created Feb 18, 2014 10:58:20 AM
+	 * Created Feb 25, 2014 9:36:22 AM
 	 * @history 12/30/13,
 	 */ 
-	public class Neo4jAS3 extends Sprite
+	public class TheMovieGraph extends Sprite
 	{ 
 		//--------------------------------------------------------------------------
 		//
@@ -61,8 +67,10 @@ package
 		// Constructor
 		//
 		//--------------------------------------------------------------------------
-		public function Neo4jAS3()
+		public function TheMovieGraph()
 		{
+			super();
+			//
 			stage.align = StageAlign.TOP_LEFT;
 			stage.scaleMode = StageScaleMode.NO_SCALE;
 			//

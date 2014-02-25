@@ -34,6 +34,7 @@
   </compiler>
   <applications>
     <application path="Neo4jAS3.as"/>
+    <application path="TheMovieGraph.as"/>
   </applications>
   <modules/>
   <workers/>

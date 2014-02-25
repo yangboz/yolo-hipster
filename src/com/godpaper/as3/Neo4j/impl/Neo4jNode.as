@@ -8,7 +8,7 @@ package com.godpaper.as3.Neo4j.impl
 	//--------------------------------------------------------------------------
 	
 	/**
-	 * Neo4jNode.as class. 
+	 * Neo4jNode.as class. -graph data record,similar nodes can have different properties,Neo4j can store billions of nodes.
 	 * @author yangboz
 	 * @langVersion 3.0
 	 * @playerVersion 11.2+

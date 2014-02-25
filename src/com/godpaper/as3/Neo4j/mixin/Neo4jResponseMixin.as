@@ -8,7 +8,8 @@ package com.godpaper.as3.Neo4j.mixin
 	//--------------------------------------------------------------------------
 	
 	/**
-	 * Neo4jResponseMixin.as class. 
+	 * Neo4jResponseMixin.as class. -Create a mixin to tell Jameson which fields in the JSON document map to the ActionScript object's fields. 
+	 * @see https://github.com/mattupstate/jameson
 	 * @author yangboz
 	 * @langVersion 3.0
 	 * @playerVersion 11.2+

@@ -8,7 +8,7 @@ package com.godpaper.as3.Neo4j.impl
 	//--------------------------------------------------------------------------
 	
 	/**
-	 * Neo4jRelationShip.as class. 
+	 * Neo4jRelationShip.as class. -Connect nodes,always have direction,always have a type,from patterns of data.
 	 * @author yangboz
 	 * @langVersion 3.0
 	 * @playerVersion 11.2+
@@ -23,7 +23,9 @@ package com.godpaper.as3.Neo4j.impl
 		// Variables
 		//
 		//--------------------------------------------------------------------------
-		
+		public var direction:String;
+		public var type:String;
+		public var data:Object;
 		//----------------------------------
 		// CONSTANTS
 		//----------------------------------
